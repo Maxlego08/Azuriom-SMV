@@ -10,6 +10,7 @@ use Exception;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 /**
  * @property int $id
@@ -64,7 +65,7 @@ class WebhookReward extends Model
     /**
      * Return a reward.
      *
-     * @param  string  $type
+     * @param string $type
      * @param $user
      * @return WebhookReward|null
      *
@@ -72,12 +73,14 @@ class WebhookReward extends Model
      */
     public static function getRandomReward(string $type, $user): ?WebhookReward
     {
+        // We get the list of rewards for the same type
         $rewards = self::where('webhook', $type)->where('is_enabled', true)->get();
         $total = $rewards->sum('chances');
         $random = random_int(0, $total);
 
         $sum = 0;
 
+        // We will get a random reward
         foreach ($rewards as $reward) {
             $sum += $reward->chances;
 
@@ -88,21 +91,31 @@ class WebhookReward extends Model
                     $reward->limit) {
                     continue;
                 }
-
                 return $reward;
             }
         }
-
         return null;
     }
 
-    public function server()
+    /**
+     * Relationship with the model Server
+     *
+     * @return BelongsTo
+     */
+    public function server(): BelongsTo
     {
         return $this->belongsTo(Server::class);
     }
 
+    /**
+     * Allows you to give the reward and execute commands on the server
+     *
+     * @param $userName
+     * @return void
+     */
     public function giveTo($userName)
     {
+        // We will give the money and check that the user exists
         if ($this->money > 0) {
             $user = User::where('name', $userName)->first();
 
@@ -118,7 +131,7 @@ class WebhookReward extends Model
             return str_replace('{reward}', $this->name, $el);
         }, $commands);
 
-        if ($this->server !== null && ! empty($commands)) {
+        if ($this->server !== null && !empty($commands)) {
             $this->server->bridge()->executeCommands($commands, $userName, $this->need_online);
         }
     }

@@ -14,4 +14,4 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::post('/webhooks/{site}', [ApiController::class, 'webhooks'])->name('webhooks');
+Route::post('/webhooks', [ApiController::class, 'webhooks'])->name('webhooks');
