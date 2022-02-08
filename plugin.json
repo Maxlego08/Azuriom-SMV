@@ -1,11 +1,11 @@
 {
     "id": "serveurminecraftvote",
     "name": "ServeurMinecraftVote",
-    "description": "Plugin for Azuriom",
+    "description": "Plugin for Serveur Minecraft Vote",
     "version": "1.0.0",
-    "url": "https://azuriom.com",
+    "url": "https://serveur-minecraft-vote.fr/",
     "authors": [
-        "Azuriom"
+        "GroupeZ"
     ],
     "providers": [
         "\\Azuriom\\Plugin\\ServeurMinecraftVote\\Providers\\ServeurMinecraftVoteServiceProvider",
