@@ -1,6 +1,7 @@
 <?php
 
 use Azuriom\Plugin\ServeurMinecraftVote\Controllers\Admin\AdminController;
+use Azuriom\Plugin\ServeurMinecraftVote\Controllers\Admin\WebhookRewardController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,4 +16,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [AdminController::class, 'index']);
+Route::get('/', [AdminController::class, 'index'])->name('index');
+Route::post('/store', [AdminController::class, 'store'])->name('store');
+Route::resource('rewards', WebhookRewardController::class)->except(['show', 'index']);
