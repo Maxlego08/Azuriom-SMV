@@ -10,7 +10,7 @@
                 @csrf
 
                 <div class="form-group">
-                    <label for="keyInput">{{ trans('vote::admin.smv.fields.key') }}</label>
+                    <label for="keyInput">{{ trans('serveurminecraftvote::admin.fields.key') }}</label>
                     <input type="text" class="form-control @error('key') is-invalid @enderror" id="keyInput" name="key" value="{{ old('key', $key ?? '') }}" required placeholder="smv_sk_">
                     <small></small>
 
@@ -20,7 +20,7 @@
                 </div>
 
                 <div class="alert alert-info" role="alert">
-                    <i class="fas fa-info-circle"></i> {!! trans('vote::admin.smv.info') !!}
+                    <i class="fas fa-info-circle"></i> {!! trans('serveurminecraftvote::admin.info') !!}
                 </div>
 
                 <button type="submit" class="btn btn-primary">
@@ -34,7 +34,7 @@
 
     <div class="card shadow mb-4">
         <div class="card-header">
-            {{ trans('vote::admin.smv.rewards') }}
+            {{ trans('serveurminecraftvote::admin.rewards') }}
         </div>
         <div class="card-body">
             <div class="table-responsive">
@@ -43,10 +43,10 @@
                     <tr>
                         <th scope="col">#</th>
                         <th scope="col">{{ trans('messages.fields.name') }}</th>
-                        <th scope="col">{{ trans('vote::admin.smv.fields.webhook') }}</th>
-                        <th scope="col">{{ trans('vote::messages.fields.server') }}</th>
-                        <th scope="col">{{ trans('vote::messages.fields.chances') }}</th>
-                        <th scope="col">{{ trans('vote::admin.smv.fields.limit') }}</th>
+                        <th scope="col">{{ trans('serveurminecraftvote::admin.fields.webhook') }}</th>
+                        <th scope="col">{{ trans('serveurminecraftvote::admin.fields.server') }}</th>
+                        <th scope="col">{{ trans('serveurminecraftvote::admin.fields.chances') }}</th>
+                        <th scope="col">{{ trans('serveurminecraftvote::admin.fields.limit') }}</th>
                         <th scope="col">{{ trans('messages.fields.enabled') }}</th>
                         <th scope="col">{{ trans('messages.fields.action') }}</th>
                     </tr>
@@ -75,7 +75,7 @@
                 </table>
             </div>
             <div class="alert alert-info" role="alert">
-                <i class="fas fa-info"></i> {!! trans('vote::admin.smv.rewards_info') !!}
+                <i class="fas fa-info"></i> {!! trans('serveurminecraftvote::admin.rewards_info') !!}
             </div>
             <a class="btn btn-primary" href="{{ route('serveurminecraftvote.admin.rewards.create') }}">
                 <i class="fas fa-plus"></i> {{ trans('messages.actions.add') }}
@@ -85,7 +85,7 @@
 
     <div class="card shadow mb-4">
         <div class="card-header">
-            {{ trans('vote::admin.smv.logs') }}
+            {{ trans('serveurminecraftvote::admin.logs') }}
         </div>
         <div class="card-body">
             <div class="table-responsive">
@@ -93,8 +93,8 @@
                     <thead>
                     <tr>
                         <th scope="col">#</th>
-                        <th scope="col">{{ trans('vote::admin.smv.fields.player') }}</th>
-                        <th scope="col">{{ trans('vote::admin.smv.fields.webhook') }}</th>
+                        <th scope="col">{{ trans('serveurminecraftvote::admin.fields.player') }}</th>
+                        <th scope="col">{{ trans('serveurminecraftvote::admin.fields.webhook') }}</th>
                         <th scope="col">{{ trans('messages.fields.name') }}</th>
                     </tr>
                     </thead>
