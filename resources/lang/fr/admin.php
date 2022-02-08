@@ -2,6 +2,7 @@
 
 return [
     'title' => 'Paramètres - Serveur Minecraft Vote',
+    'permission' => 'Gestion du plugin Serveur Minecraft Vote',
     'nav' => [
         'title' => 'Serveur Minecraft Vote'
     ],
