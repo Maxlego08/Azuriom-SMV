@@ -20,8 +20,8 @@ use ServeurMinecraftVote\ServeurMinecraftVote;
 class AdminController extends Controller
 {
 
-    const SETTINGS_KEY = 'vote::smv.key';
-    const SETTINGS_WEBHOOK = 'vote::smv.webhook';
+    const SETTINGS_KEY = 'smv.key';
+    const SETTINGS_WEBHOOK = 'smv.webhook';
 
     const WEBHOOK_EVENTS = [
         'user.follow',
