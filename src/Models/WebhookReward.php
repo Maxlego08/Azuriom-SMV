@@ -28,6 +28,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property Server|null $server
  *
  * @method static Builder enabled()
+ * @method static WebhookReward create(array $values)
  */
 class WebhookReward extends Model
 {

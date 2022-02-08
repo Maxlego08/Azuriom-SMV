@@ -34,7 +34,7 @@
 
     <div class="card shadow mb-4">
         <div class="card-header">
-            {{ trans('serveurminecraftvote::admin.rewards') }}
+            {{ trans('serveurminecraftvote::admin.rewards.title') }}
         </div>
         <div class="card-body">
             <div class="table-responsive">

@@ -24,7 +24,22 @@ return [
         'already' => 'Le webhook existe déjà, vous ne pouvez pas le recréer.',
         'info' => 'Vous pouvez retrouver la liste des webhooks sur cette page <a href="https://docs.serveur-minecraft-vote.fr/webhook">https://docs.serveur-minecraft-vote.fr/webhook</a>',
     ],
-    'rewards' => 'Récompenses',
     'rewards_info' => 'Donnez des récompenses à vos joueurs lorsque qu\'ils suivent votre serveur, envoyer un message d\'informations lorsque le train de la hype est actif.',
     'logs' => 'Historique',
+    'rewards' => [
+        'title' => 'Récompenses',
+        'title-edit' => 'Modifier la récompense :reward',
+        'title-create' => 'Créer une récompense',
+
+        'need-online' => 'L\'utilisateur doit être en ligne pour recevoir la récompense (uniquement disponible avec AzLink)',
+        'enable' => 'Activer la récompense',
+
+        'commands-info' => 'Vous pouvez utiliser <code>{player}</code> pour utiliser le nom du joueur et <code>{reward}</code> pour utiliser le nom de la récompense. La commande ne doit pas contenir de <code>/</code> au début.',
+
+        'status' => [
+            'created' => 'La récompense a été créée.',
+            'updated' => 'La récompense a été mise à jour.',
+            'deleted' => 'La récompense a été supprimée.',
+        ],
+    ],
 ];

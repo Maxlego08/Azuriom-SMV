@@ -4,15 +4,14 @@ namespace Azuriom\Plugin\ServeurMinecraftVote\Controllers\Admin;
 
 use Azuriom\Http\Controllers\Controller;
 use Azuriom\Models\Setting;
-use Azuriom\Plugin\Vote\Models\WebhookHistory;
-use Azuriom\Plugin\Vote\Models\WebhookReward;
+use Azuriom\Plugin\ServeurMinecraftVote\Models\WebhookHistory;
+use Azuriom\Plugin\ServeurMinecraftVote\Models\WebhookReward;
 use GuzzleHttp\Exception\GuzzleException;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
-use Illuminate\Http\Response;
 use Illuminate\Support\Str;
 use Illuminate\Validation\ValidationException;
 use ServeurMinecraftVote\Exceptions\WebhookCreateException;
@@ -82,7 +81,7 @@ class AdminController extends Controller
             Setting::updateSettings($setting);
 
             return redirect()->route('serveurminecraftvote.admin.index')
-                ->with('success', trans('serveurminecraftvote::admin.smv.webhook.success'));
+                ->with('success', trans('serveurminecraftvote::admin.webhook.success'));
         } catch (GuzzleException|WebhookCreateException $e) {
             return redirect()->route('serveurminecraftvote.admin.index')
                 ->with('error', trans('serveurminecraftvote::admin.webhook.error'));

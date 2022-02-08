@@ -1,6 +1,6 @@
 <?php
 
-namespace Azuriom\ServeurMinecraftVote\Vote\Requests;
+namespace Azuriom\Plugin\ServeurMinecraftVote\Requests;
 
 use Azuriom\Http\Requests\Traits\ConvertCheckbox;
 use Illuminate\Foundation\Http\FormRequest;

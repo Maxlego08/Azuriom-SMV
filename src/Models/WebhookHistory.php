@@ -11,6 +11,8 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
  * @property string $name
  * @property int $webhook_reward_id
  * @property WebhookReward $webhook
+ *
+ * @method static WebhookHistory create(array $values)
  */
 class WebhookHistory extends Model
 {

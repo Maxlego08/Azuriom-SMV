@@ -4,15 +4,13 @@ namespace Azuriom\Plugin\ServeurMinecraftVote\Controllers\Admin;
 
 use Azuriom\Http\Controllers\Controller;
 use Azuriom\Models\Server;
-use Azuriom\Plugin\ServeurMinecraftVote\Controllers\Admin\AdminController;
 use Azuriom\Plugin\ServeurMinecraftVote\Models\WebhookReward;
-use Azuriom\ServeurMinecraftVote\Vote\Requests\WebhookRewardRequest;
+use Azuriom\Plugin\ServeurMinecraftVote\Requests\WebhookRewardRequest;
 use Exception;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
-use Illuminate\Http\Response;
 
 class WebhookRewardController extends Controller
 {
@@ -23,7 +21,7 @@ class WebhookRewardController extends Controller
      */
     public function create()
     {
-        return view('vote::admin.rewards.webhooks.create', [
+        return view('serveurminecraftvote::admin.webhooks.create', [
             'servers' => Server::executable()->get(),
             'webhooks' => AdminController::WEBHOOK_EVENTS,
         ]);
@@ -39,8 +37,8 @@ class WebhookRewardController extends Controller
     {
         WebhookReward::create($request->validated());
 
-        return redirect()->route('vote.admin.smv.index')
-            ->with('success', trans('vote::admin.rewards.status.created'));
+        return redirect()->route('serveurminecraftvote.admin.index')
+            ->with('success', trans('serveurminecraftvote::admin.rewards.status.created'));
     }
 
     /**
@@ -51,7 +49,7 @@ class WebhookRewardController extends Controller
      */
     public function edit(WebhookReward $reward)
     {
-        return view('vote::admin.rewards.webhooks.edit', [
+        return view('serveurminecraftvote::admin.webhooks.edit', [
             'reward' => $reward->load('server'),
             'servers' => Server::executable()->get(),
             'webhooks' => AdminController::WEBHOOK_EVENTS,
@@ -69,8 +67,8 @@ class WebhookRewardController extends Controller
     {
         $reward->update($request->validated());
 
-        return redirect()->route('vote.admin.smv.index')
-            ->with('success', trans('vote::admin.rewards.status.updated'));
+        return redirect()->route('serveurminecraftvote.admin.index')
+            ->with('success', trans('serveurminecraftvote::admin.rewards.status.updated'));
     }
 
     /**
@@ -85,7 +83,7 @@ class WebhookRewardController extends Controller
     {
         $reward->delete();
 
-        return redirect()->route('vote.admin.smv.index')
-            ->with('success', trans('vote::admin.rewards.status.deleted'));
+        return redirect()->route('serveurminecraftvote.admin.index')
+            ->with('success', trans('serveurminecraftvote::admin.rewards.status.deleted'));
     }
 }

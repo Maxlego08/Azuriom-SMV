@@ -101,7 +101,7 @@ class ServeurMinecraftVoteServiceProvider extends BasePluginServiceProvider
         return [
             'smv' => [
                 'name' => 'serveurminecraftvote::admin.nav.title',
-                'icon' => 'fas fa-envelope',
+                'icon' => 'fas fa-person-booth',
                 'route' => 'serveurminecraftvote.admin.index',
                 'permission' => 'smv.admin'
             ],
