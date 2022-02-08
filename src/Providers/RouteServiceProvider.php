@@ -14,12 +14,12 @@ class RouteServiceProvider extends BaseRouteServiceProvider
      */
     public function loadRoutes()
     {
-        Route::prefix('admin/'.$this->plugin->id)
+        Route::prefix('admin/serveur/minecraft/vote')
             ->middleware('admin-access')
             ->name($this->plugin->id.'.admin.')
             ->group(plugin_path($this->plugin->id.'/routes/admin.php'));
 
-        Route::prefix('api/'.$this->plugin->id)
+        Route::prefix('api/serveur/minecraft/vote')
             ->middleware('api')
             ->name($this->plugin->id.'.api.')
             ->group(plugin_path($this->plugin->id.'/routes/api.php'));

@@ -4,6 +4,9 @@ return [
 
     'permission' => 'Manage Serveur Minecraft Vote plugin',
     'title' => 'Settings - Serveur Minecraft Vote',
+    'nav' => [
+        'title' => 'Serveur Minecraft Vote'
+    ],
     'info' => 'You must create your API key on this page <a href="https://serveur-minecraft-vote.fr/members/developers/keys" target="_blank">https://serveur-minecraft-vote.fr/members/developers/keys</a>. The webhook will then be created automatically.',
     'fields' => [
         'key' => 'Secret key',
