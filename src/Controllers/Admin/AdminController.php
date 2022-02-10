@@ -62,7 +62,7 @@ class AdminController extends Controller
         try {
             $smv = new ServeurMinecraftVote($secretKey);
 
-            $url = route('serveurminecraftvote.api.webhooks', ['site' => 'smv']);
+            $url = route('serveurminecraftvote.api.webhooks');
             $webhooks = $smv->getWebhooks();
 
             foreach ($webhooks as $webhook) {
