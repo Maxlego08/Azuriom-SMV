@@ -25,7 +25,7 @@ return [
         'already' => 'Le webhook existe déjà, vous ne pouvez pas le recréer.',
         'info' => 'Vous pouvez retrouver la liste des webhooks sur cette page <a href="https://docs.serveur-minecraft-vote.fr/webhook">https://docs.serveur-minecraft-vote.fr/webhook</a>',
     ],
-    'rewards_info' => 'Donnez des récompenses à vos joueurs lorsque qu\'ils suivent votre serveur, envoyer un message d\'informations lorsque le train de la hype est actif.',
+    'rewards_info' => 'Donnez des récompenses à vos joueurs lorsqu\'ils suivent votre serveur, envoyer un message d\'informations lorsque le train de la hype est actif.',
     'logs' => 'Historique',
     'rewards' => [
         'title' => 'Récompenses',

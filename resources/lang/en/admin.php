@@ -1,9 +1,8 @@
 <?php
 
 return [
-
-    'permission' => 'Manage Serveur Minecraft Vote plugin',
     'title' => 'Settings - Serveur Minecraft Vote',
+    'permission' => 'Manage Serveur Minecraft Vote plugin',
     'nav' => [
         'title' => 'Serveur Minecraft Vote'
     ],
