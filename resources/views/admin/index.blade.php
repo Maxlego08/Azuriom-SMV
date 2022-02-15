@@ -4,14 +4,19 @@
 
 @section('content')
     <div class="card shadow mb-4">
+        <div class="card-header d-flex justify-content-between">
+            {{ trans('serveurminecraftvote::admin.fields.key') }}
+            <a href="https://discord.gg/9TX3W9ySx2" target="_blank"
+               title="{{ trans('serveurminecraftvote::admin.discord') }}"><i class="fab fa-discord"></i></a>
+        </div>
         <div class="card-body">
 
             <form action="{{ route('serveurminecraftvote.admin.store') }}" method="POST">
                 @csrf
 
                 <div class="form-group">
-                    <label for="keyInput">{{ trans('serveurminecraftvote::admin.fields.key') }}</label>
-                    <input type="text" class="form-control @error('key') is-invalid @enderror" id="keyInput" name="key" value="{{ old('key', $key ?? '') }}" required placeholder="smv_sk_">
+                    <input type="text" class="form-control @error('key') is-invalid @enderror" id="keyInput" name="key"
+                           value="{{ old('key', $key ?? '') }}" required placeholder="smv_sk_">
                     <small></small>
 
                     @error('key')
@@ -66,8 +71,12 @@
                                 </span>
                             </td>
                             <td>
-                                <a href="{{ route('serveurminecraftvote.admin.rewards.edit', $reward) }}" class="mx-1" title="{{ trans('messages.actions.edit') }}" data-toggle="tooltip"><i class="fas fa-edit"></i></a>
-                                <a href="{{ route('serveurminecraftvote.admin.rewards.destroy', $reward) }}" class="mx-1" title="{{ trans('messages.actions.delete') }}" data-toggle="tooltip" data-confirm="delete"><i class="fas fa-trash"></i></a>
+                                <a href="{{ route('serveurminecraftvote.admin.rewards.edit', $reward) }}" class="mx-1"
+                                   title="{{ trans('messages.actions.edit') }}" data-toggle="tooltip"><i
+                                        class="fas fa-edit"></i></a>
+                                <a href="{{ route('serveurminecraftvote.admin.rewards.destroy', $reward) }}"
+                                   class="mx-1" title="{{ trans('messages.actions.delete') }}" data-toggle="tooltip"
+                                   data-confirm="delete"><i class="fas fa-trash"></i></a>
                             </td>
                         </tr>
                     @endforeach

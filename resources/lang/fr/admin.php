@@ -6,6 +6,7 @@ return [
     'nav' => [
         'title' => 'Serveur Minecraft Vote'
     ],
+    'discord' => 'Invitation vers le support discord',
     'info' => 'Vous devez créer votre clé API sur cette page <a href="https://serveur-minecraft-vote.fr/members/developers/keys" target="_blank">https://serveur-minecraft-vote.fr/members/developers/keys</a>. Le webhook va ensuite se créer automatiquement.',
     'fields' => [
         'key' => 'Clé secrète',
