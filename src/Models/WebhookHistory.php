@@ -5,11 +5,14 @@ namespace Azuriom\Plugin\ServeurMinecraftVote\Models;
 use Azuriom\Models\Traits\HasTablePrefix;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 /**
  * @property string $name
  * @property int $webhook_reward_id
  * @property WebhookReward $webhook
+ *
+ * @method static WebhookHistory create(array $values)
  */
 class WebhookHistory extends Model
 {
@@ -32,7 +35,12 @@ class WebhookHistory extends Model
         'webhook_reward_id', 'name',
     ];
 
-    public function webhook()
+    /**
+     * Relation of the history to the reward
+     *
+     * @return BelongsTo
+     */
+    public function webhook(): BelongsTo
     {
         return $this->belongsTo(WebhookReward::class, 'webhook_reward_id');
     }

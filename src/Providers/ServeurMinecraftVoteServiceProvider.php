@@ -3,6 +3,7 @@
 namespace Azuriom\Plugin\ServeurMinecraftVote\Providers;
 
 use Azuriom\Extensions\Plugin\BasePluginServiceProvider;
+use Azuriom\Models\Permission;
 
 class ServeurMinecraftVoteServiceProvider extends BasePluginServiceProvider
 {
@@ -49,7 +50,7 @@ class ServeurMinecraftVoteServiceProvider extends BasePluginServiceProvider
     {
         $this->registerMiddlewares();
 
-        //
+        require_once __DIR__.'/../../vendor/autoload.php';
     }
 
     /**
@@ -73,7 +74,9 @@ class ServeurMinecraftVoteServiceProvider extends BasePluginServiceProvider
 
         $this->registerUserNavigation();
 
-        //
+        Permission::registerPermissions([
+            'smv.admin' => 'serveurminecraftvote::admin.permission',
+        ]);
     }
 
     /**
@@ -96,7 +99,12 @@ class ServeurMinecraftVoteServiceProvider extends BasePluginServiceProvider
     protected function adminNavigation()
     {
         return [
-            //
+            'smv' => [
+                'name' => 'serveurminecraftvote::admin.nav.title',
+                'icon' => 'fas fa-person-booth',
+                'route' => 'serveurminecraftvote.admin.index',
+                'permission' => 'smv.admin'
+            ],
         ];
     }
 
