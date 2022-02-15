@@ -84,7 +84,7 @@ class AdminController extends Controller
                 ->with('success', trans('serveurminecraftvote::admin.webhook.success'));
         } catch (GuzzleException|WebhookCreateException $e) {
             return redirect()->route('serveurminecraftvote.admin.index')
-                ->with('error', trans('serveurminecraftvote::admin.webhook.error'));
+                ->with('error', trans('serveurminecraftvote::admin.webhook.error', ['error' => $e->getMessage()]));
         }
     }
 }

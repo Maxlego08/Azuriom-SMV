@@ -21,7 +21,7 @@ return [
     'limit' => 'Vous pouvez ajouter une limite de récompense par utilisateur. Pour ne pas avoir de limite vous devez mettre 0.',
     'webhook' => [
         'success' => 'Vous venez de créer le webhook sur Serveur Minecraft Vote.',
-        'error' => 'Une erreur est survenue lors de la création du webhook.',
+        'error' => 'Une erreur est survenue lors de la création du webhook. :error',
         'already' => 'Le webhook existe déjà, vous ne pouvez pas le recréer.',
         'info' => 'Vous pouvez retrouver la liste des webhooks sur cette page <a href="https://docs.serveur-minecraft-vote.fr/webhook">https://docs.serveur-minecraft-vote.fr/webhook</a>',
     ],
