@@ -43,9 +43,11 @@ class WebhookRewardRequest extends FormRequest
     /**
      * Get the validated data from the request.
      *
-     * @return array
+     * @param null $key
+     * @param null $default
+     * @return mixed
      */
-    public function validated()
+    public function validated($key = null, $default = null)
     {
         $validated = parent::validated();
 
