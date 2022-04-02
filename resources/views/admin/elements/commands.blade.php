@@ -32,7 +32,7 @@
     @forelse($commands ?? [] as $command)
         <div class="input-group mb-2">
             <input type="text" class="form-control" name="commands[]" value="{{ $command }}">
-            <div class="input-group-append">
+            <div>
                 <button class="btn btn-outline-danger command-remove" type="button"><i class="fas fa-times"></i>
                 </button>
             </div>
