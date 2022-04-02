@@ -12,7 +12,7 @@ class ServeurMinecraftVoteServiceProvider extends BasePluginServiceProvider
      *
      * @var array
      */
-    protected $middleware = [
+    protected array $middleware = [
         // \Azuriom\Plugin\ServeurMinecraftVote\Middleware\ExampleMiddleware::class,
     ];
 
@@ -21,14 +21,14 @@ class ServeurMinecraftVoteServiceProvider extends BasePluginServiceProvider
      *
      * @var array
      */
-    protected $middlewareGroups = [];
+    protected array $middlewareGroups = [];
 
     /**
      * The plugin's route middleware.
      *
      * @var array
      */
-    protected $routeMiddleware = [
+    protected array $routeMiddleware = [
         // 'example' => \Azuriom\Plugin\ServeurMinecraftVote\Middleware\ExampleRouteMiddleware::class,
     ];
 
@@ -37,7 +37,7 @@ class ServeurMinecraftVoteServiceProvider extends BasePluginServiceProvider
      *
      * @var array
      */
-    protected $policies = [
+    protected array $policies = [
         // User::class => UserPolicy::class,
     ];
 
@@ -100,8 +100,8 @@ class ServeurMinecraftVoteServiceProvider extends BasePluginServiceProvider
     {
         return [
             'smv' => [
-                'name' => 'serveurminecraftvote::admin.nav.title',
-                'icon' => 'fas fa-person-booth',
+                'name' => trans('serveurminecraftvote::admin.nav.title'),
+                'icon' => 'bi bi-envelope-paper-heart-fill',
                 'route' => 'serveurminecraftvote.admin.index',
                 'permission' => 'smv.admin'
             ],
