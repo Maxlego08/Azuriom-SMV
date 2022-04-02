@@ -1,29 +1,29 @@
 @push('footer-scripts')
     <script>
-      function addCommandListener(el) {
-        el.addEventListener('click', function () {
-          const element = el.parentNode.parentNode;
+        function addCommandListener(el) {
+            el.addEventListener('click', function () {
+                const element = el.parentNode.parentNode;
 
-          element.parentNode.removeChild(element);
+                element.parentNode.removeChild(element);
+            });
+        }
+
+        document.querySelectorAll('.command-remove').forEach(function (el) {
+            addCommandListener(el);
         });
-      }
 
-      document.querySelectorAll('.command-remove').forEach(function (el) {
-        addCommandListener(el);
-      });
+        document.getElementById('addCommandButton').addEventListener('click', function () {
+            let input = '<div class="input-group mb-2"><input type="text" name="commands[]" class="form-control"><div>';
+            input += '<button class="btn btn-outline-danger command-remove" type="button"><i class="bi bi-x-lg"></i></button>';
+            input += '</div></div>';
 
-      document.getElementById('addCommandButton').addEventListener('click', function () {
-        let input = '<div class="input-group mb-2"><input type="text" name="commands[]" class="form-control"><div class="input-group-append">';
-        input += '<button class="btn btn-outline-danger command-remove" type="button"><i class="bi bi-x-lg"></i></button>';
-        input += '</div></div>';
+            const newElement = document.createElement('div');
+            newElement.innerHTML = input;
 
-        const newElement = document.createElement('div');
-        newElement.innerHTML = input;
+            addCommandListener(newElement.querySelector('.command-remove'));
 
-        addCommandListener(newElement.querySelector('.command-remove'));
-
-        document.getElementById('commands').appendChild(newElement);
-      });
+            document.getElementById('commands').appendChild(newElement);
+        });
     </script>
 @endpush
 
@@ -40,7 +40,7 @@
     @empty
         <div class="input-group mb-2">
             <input type="text" class="form-control" name="commands[]">
-            <div class="input-group-append">
+            <div>
                 <button class="btn btn-outline-danger command-remove" type="button"><i class="bi bi-x-lg"></i>
                 </button>
             </div>
