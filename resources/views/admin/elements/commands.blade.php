@@ -2,7 +2,7 @@
     <script>
         function addCommandListener(el) {
             el.addEventListener('click', function () {
-                const element = el.parentNode.parentNode;
+                const element = el.parentNode;
 
                 element.parentNode.removeChild(element);
             });
@@ -13,9 +13,9 @@
         });
 
         document.getElementById('addCommandButton').addEventListener('click', function () {
-            let input = '<div class="input-group mb-2"><input type="text" name="commands[]" class="form-control"><div>';
+            let input = '<div class="input-group mb-2"><input type="text" name="commands[]" class="form-control">';
             input += '<button class="btn btn-outline-danger command-remove" type="button"><i class="bi bi-x-lg"></i></button>';
-            input += '</div></div>';
+            input += '</div>';
 
             const newElement = document.createElement('div');
             newElement.innerHTML = input;
@@ -32,18 +32,14 @@
     @forelse($commands ?? [] as $command)
         <div class="input-group mb-2">
             <input type="text" class="form-control" name="commands[]" value="{{ $command }}">
-            <div>
-                <button class="btn btn-outline-danger command-remove" type="button"><i class="fas fa-times"></i>
-                </button>
-            </div>
+            <button class="btn btn-outline-danger command-remove" type="button"><i class="fas fa-times"></i>
+            </button>
         </div>
     @empty
         <div class="input-group mb-2">
             <input type="text" class="form-control" name="commands[]">
-            <div>
-                <button class="btn btn-outline-danger command-remove" type="button"><i class="bi bi-x-lg"></i>
-                </button>
-            </div>
+            <button class="btn btn-outline-danger command-remove" type="button"><i class="bi bi-x-lg"></i>
+            </button>
         </div>
     @endforelse
 </div>
